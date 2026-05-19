@@ -1,0 +1,42 @@
+﻿@page
+@model Ejercicios_Razor_Pages.Pages.Programa3Model
+@{
+}
+
+<h1>Evaluar expresión (ax + by)<sup>n</sup></h1>
+
+<form method="post">
+    <label>a:</label>
+    <input type="number" asp-for="A" required />
+
+    <br /><br />
+
+    <label>b:</label>
+    <input type="number" asp-for="B" required />
+
+    <br /><br />
+
+    <label>x:</label>
+    <input type="number" asp-for="X" required />
+
+    <br /><br />
+
+    <label>y:</label>
+    <input type="number" asp-for="Y" required />
+
+    <br /><br />
+
+    <label>n:</label>
+    <input type="number" asp-for="N" min="0" required />
+
+    <br /><br />
+
+    <button type="submit">Calcular</button>
+</form>
+
+@if (Model.Calculado)
+{
+    <hr />
+    <h2>Resultado</h2>
+    <p><strong>Resultado:</strong> @Model.Resultado</p>
+}

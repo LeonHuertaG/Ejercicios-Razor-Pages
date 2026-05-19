@@ -1,0 +1,29 @@
+﻿@page
+@model Ejercicios_Razor_Pages.Pages.Programa2Model
+@{
+}
+
+<h1>Cifrado César</h1>
+
+<form method="post">
+    <label>Mensaje:</label><br />
+    <textarea asp-for="Mensaje" rows="4" cols="50" required></textarea>
+
+    <br /><br />
+
+    <label>Valor de n:</label>
+    <input type="number" asp-for="N" min="1" required />
+
+    <br /><br />
+
+    <button type="submit" name="accion" value="codificar">Codificar</button>
+    <button type="submit" name="accion" value="decodificar">Decodificar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.Resultado))
+{
+    <hr />
+    <h2>Resultado</h2>
+    <p><strong>@Model.TipoOperacion:</strong></p>
+    <p>@Model.Resultado</p>
+}
